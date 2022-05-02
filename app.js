@@ -158,12 +158,12 @@ app.post("/auth/login", async (req, res) => {
 });
 
 // Credentials
-const dbUrl = process.env.DB_URL;
+// const dbUrl = process.env.DB_URL;
 
 // Connect with DB
 mongoose
   .connect(
-    dbUrl
+    process.env.DB_URL
   )
   .then(() => {
     app.listen(port);
