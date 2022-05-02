@@ -8,6 +8,7 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
 // Config JSON response
 app.use(express.json());
 
@@ -165,7 +166,7 @@ mongoose
     dbUrl
   )
   .then(() => {
-    app.listen(3000);
+    app.listen(port);
     console.log("Conectado ao BD com sucesso!");
   })
   .catch((error) => console.log(error));
